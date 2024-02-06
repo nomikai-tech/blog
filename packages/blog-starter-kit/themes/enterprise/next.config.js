@@ -9,7 +9,7 @@ const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST;
 
 const getBasePath = () => {
 	if (BASE_URL && BASE_URL.indexOf('/') !== -1) {
-		return BASE_URL.substring(BASE_URL.indexOf('/'));
+		return '';
 	}
 	return undefined;
 };
