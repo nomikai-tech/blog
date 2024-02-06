@@ -32,7 +32,6 @@ export const Header = () => {
 				<li key={item.url}>
 					<a
 						href={item.url}
-						target="_blank"
 						rel="noopener noreferrer"
 						className="transition-200 block max-w-[200px] truncate text-ellipsis whitespace-nowrap rounded-lg px-6 py-2 transition-colors hover:bg-nk-cream hover:text-black dark:hover:bg-neutral-800 dark:hover:text-white"
 					>
