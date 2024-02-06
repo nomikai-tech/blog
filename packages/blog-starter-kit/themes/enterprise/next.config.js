@@ -86,6 +86,14 @@ const config = {
 				source: '/api/collect',
 				destination: `${ADVANCED_ANALYTICS_BASE_URL}/api/collect`,
 			},
+			{
+				source: "/blog",
+				destination: "https://nomikai-blog.vercel.app/blog", 
+			  },
+			  {
+				source: "/blog/:path*",
+				destination: "https://nomikai-blog.vercel.app/blog/:path*",
+			  },
 		];
 	},
 	async redirects() {
