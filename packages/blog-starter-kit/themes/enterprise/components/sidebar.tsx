@@ -69,19 +69,11 @@ function PublicationSidebar(props: Props) {
 						</h2>
 						<section className="mb-10">
 							<ul className="flex flex-col gap-2 text-slate-700 dark:text-white">
-								<li>
-									<Link
-										href="/"
-										className="transition-200 block truncate text-ellipsis whitespace-nowrap rounded p-2 px-3 transition-colors hover:bg-slate-100 hover:text-black dark:hover:bg-neutral-800 dark:hover:text-white"
-									>
-										Home
-									</Link>
-								</li>
 								{navbarItems.map((item) => (
 									<li key={item.url}>
 										<Link
 											href={item.url}
-											className="transition-200 block truncate text-ellipsis whitespace-nowrap rounded p-2 px-3 transition-colors hover:bg-slate-100 hover:text-black dark:hover:bg-neutral-800 dark:hover:text-white"
+											className="transition-200 block truncate text-sm text-ellipsis whitespace-nowrap rounded p-2 px-3 transition-colors hover:bg-slate-100 hover:text-black dark:hover:bg-neutral-800 dark:hover:text-white"
 										>
 											{item.label}
 										</Link>

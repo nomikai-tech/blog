@@ -19,8 +19,8 @@ export const Header = () => {
 	const [isSidebarVisible, setIsSidebarVisible] = useState<boolean>();
 	const { publication } = useAppContext();
 	const navbarItems = publication.preferences.navbarItems.filter(hasUrl);
-	const visibleItems = navbarItems.slice(0, 3);
-	const hiddenItems = navbarItems.slice(3);
+	const visibleItems = navbarItems.slice(0, 10);
+	const hiddenItems = navbarItems.slice(10);
 
 	const toggleSidebar = () => {
 		setIsSidebarVisible((prevVisibility) => !prevVisibility);
@@ -33,7 +33,7 @@ export const Header = () => {
 					<a
 						href={item.url}
 						rel="noopener noreferrer"
-						className="transition-200 block max-w-[200px] truncate text-ellipsis whitespace-nowrap rounded-lg px-6 py-2 transition-colors hover:bg-nk-cream hover:text-black dark:hover:bg-neutral-800 dark:hover:text-white"
+						className="transition-200 block max-w-[200px] text-sm truncate text-ellipsis whitespace-nowrap rounded-lg px-6 py-2 transition-colors hover:bg-turquoise/10 hover:text-black dark:hover:bg-neutral-800 dark:hover:text-white"
 					>
 						{item.label}
 					</a>
@@ -44,7 +44,7 @@ export const Header = () => {
 				<li>
 					<DropdownMenu.Root>
 						<DropdownMenu.Trigger asChild>
-							<button className="transition-200 block rounded-full p-2 transition-colors hover:bg-white hover:text-black dark:hover:bg-neutral-800 dark:hover:text-white">
+							<button className="transition-200 block rounded-full p-2 transition-colors text-sm hover:bg-white hover:text-black dark:hover:bg-neutral-800 dark:hover:text-white">
 								More
 							</button>
 						</DropdownMenu.Trigger>
@@ -76,7 +76,7 @@ export const Header = () => {
 	);
 
 	return (
-		<header className="border-b nomikai-bg-light-yellow py-10 dark:border-neutral-800 dark:bg-neutral-900">
+		<header className="py-10 dark:border-neutral-800 dark:bg-neutral-900">
 			<Container className="grid grid-cols-4 gap-5 px-5">
 				<div className="col-span-2 flex flex-1 flex-row items-center gap-2 lg:col-span-1">
 					<div className="lg:hidden">
@@ -84,7 +84,7 @@ export const Header = () => {
 							type="outline"
 							label=""
 							icon={<HamburgerSVG className="h-5 w-5 stroke-current" />}
-							className="rounded-xl border-transparent !px-3 !py-2 text-black hover:bg-slate-900 dark:hover:bg-neutral-800"
+							className="rounded-xl border-transparent !px-3 !py-2 text-black hover:bg-turquoise-100 dark:hover:bg-neutral-800"
 							onClick={toggleSidebar}
 						/>
 
@@ -96,9 +96,10 @@ export const Header = () => {
 						<PublicationLogo />
 					</div>
 				</div>
-				<div className="col-span-2 flex flex-row items-center justify-end gap-5 text-slate-300 lg:col-span-3">
+				<div className="col-span-2 flex flex-row items-center justify-end gap-2 text-slate-300 lg:col-span-3">
 					<nav className="hidden lg:block">{navList}</nav>
-					<Button href="/app" as="a" type="primary" label="Access Private Beta" />
+					<Button href="/app" as="a" type="primary" label="Signup" />
+					<Button href="/app" as="a" type="outline-turquoise" label="Login" />
 				</div>
 			</Container>
 			<div className="mt-5 flex justify-center lg:hidden">

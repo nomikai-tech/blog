@@ -12,7 +12,7 @@ const getPublicationLogo = (publication: PublicationFragment, isSidebar?: boolea
 
 export const PublicationLogo = ({ isSidebar }: { isSidebar?: boolean }) => {
 	const { publication } = useAppContext();
-	const PUBLICATION_LOGO = getPublicationLogo(publication, isSidebar);
+	const PUBLICATION_LOGO = "https://imagedelivery.net/dFIo1wWuUZtJiq57QrgKWw/312b4d06-319f-4522-aa4d-eccf5b280c00/w=800";
 
 	return (
 		<h1 className="relative w-full">

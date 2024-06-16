@@ -22,10 +22,14 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 				buttonClassName =
 					'text-slate-950 bg-transparent dark:border-neutral-800 hover:bg-slate-50 dark:bg-transparent dark:hover:bg-neutral-800 dark:text-white';
 				break;
+			case 'outline-turquoise':
+				buttonClassName =
+					'text-black hover:text-black bg-turquoise/10 hover:bg-turquoise border-turquoise dark:bg-nk-dark-blue dark:text-white';
+				break;
 
 			case 'primary':
 				buttonClassName =
-					'text-nk-dark-blue hover:text-nk-black bg-nk-cream hover:bg-nk-blue border-nk-dark-blue dark:bg-nk-dark-blue dark:text-white';
+					'text-black hover:text-black bg-turquoise hover:bg-turquoise/10 border-turquoise dark:bg-nk-dark-blue dark:text-white';
 				break;
 
 			case 'outline-dark':
