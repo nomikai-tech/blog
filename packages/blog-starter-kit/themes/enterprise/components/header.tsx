@@ -98,8 +98,8 @@ export const Header = () => {
 				</div>
 				<div className="col-span-2 flex flex-row items-center justify-end gap-2 text-slate-300 lg:col-span-3">
 					<nav className="hidden lg:block">{navList}</nav>
-					<Button href="/app" as="a" type="primary" label="Signup" />
-					<Button href="/app" as="a" type="outline-turquoise" label="Login" />
+					<Button href="/app/api/auth/signup" as="a" type="primary" label="Signup" />
+					<Button href="/app/api/auth/login" as="a" type="outline-turquoise" label="Login" />
 				</div>
 			</Container>
 			<div className="mt-5 flex justify-center lg:hidden">
