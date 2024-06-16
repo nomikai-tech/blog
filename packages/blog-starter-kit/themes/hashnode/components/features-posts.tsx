@@ -9,11 +9,11 @@ import { getDefaultPostCoverImageUrl } from '../utils/commonUtils';
 import { DEFAULT_AVATAR, blurImageDimensions } from '../utils/const/images';
 import { getBlurHash, kFormatter, resizeImage } from '../utils/image';
 
-import { Post, PostThumbnailFragment, PublicationFragment } from '../generated/graphql';
+import { Post, PostThumbnailFragment, RequiredPublicationFieldsFragment } from '../generated/graphql';
 
 const FeaturedPosts = (props: {
   posts: Array<PostThumbnailFragment>;
-  publication: Pick<PublicationFragment, 'id' | 'features'> & {
+  publication: Pick<RequiredPublicationFieldsFragment, 'id' | 'features'> & {
     pinnedPost?: Pick<Post, 'id'> | null;
   };
 }) => {

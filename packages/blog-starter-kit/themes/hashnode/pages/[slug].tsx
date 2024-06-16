@@ -105,7 +105,6 @@ const Page = ({ page }: PageProps) => {
 export default function PostOrPage(props: Props) {
 	const headerRef = useRef<HTMLElement | null>(null);
 	const maybePost = props.type === 'post' ? props.post : null;
-	const maybePage = props.type === 'page' ? props.page : null;
 	const publication = props.publication;
 	const navPositionStyles =
 		'relative transform-none md:sticky md:top-0 md:left-0 md:backdrop-blur-lg';
@@ -148,7 +147,7 @@ export default function PostOrPage(props: Props) {
 		publication.descriptionSEO || publication.title || `${publication.author.name}'s Blog`;
 
 	return (
-		<AppProvider publication={publication} post={maybePost} page={maybePage}>
+		<AppProvider publication={publication} post={maybePost}>
 			<Layout>
 				<Head>
 					<title>

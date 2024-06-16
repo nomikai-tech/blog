@@ -1,15 +1,7 @@
 import React, { createContext, useContext } from 'react';
-import {
-	PageByPublicationQuery,
-	PostFullFragment,
-	PublicationFragment,
-} from '../../generated/graphql';
+import { PostFullFragment, PublicationFragment } from '../../generated/graphql';
 
-type AppContext = {
-	publication: PublicationFragment;
-	post: PostFullFragment | null;
-	page: NonNullable<PageByPublicationQuery['publication']>['staticPage'];
-};
+type AppContext = { publication: PublicationFragment; post: PostFullFragment | null };
 
 const AppContext = createContext<AppContext | null>(null);
 
@@ -17,19 +9,16 @@ const AppProvider = ({
 	children,
 	publication,
 	post,
-	page,
 }: {
 	children: React.ReactNode;
 	publication: PublicationFragment;
 	post?: PostFullFragment | null;
-	page?: NonNullable<PageByPublicationQuery['publication']>['staticPage'];
 }) => {
 	return (
 		<AppContext.Provider
 			value={{
 				publication,
 				post: post ?? null,
-				page: page ?? null,
 			}}
 		>
 			{children}

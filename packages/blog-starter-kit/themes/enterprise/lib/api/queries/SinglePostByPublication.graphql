@@ -32,9 +32,6 @@ fragment PostFull on Post {
 			html
 		}
 	}
-	series {
-		id
-	}
 	seo {
 		title
 		description
@@ -48,8 +45,8 @@ fragment PostFull on Post {
 		username
 		profilePicture
 		socialMediaLinks {
-			twitter
-		}
+          twitter
+        }
 		bio {
 			html
 		}
@@ -62,7 +59,7 @@ fragment PostFull on Post {
 			html
 		}
 		profilePicture
-	}
+  	}
 	title
 	content {
 		markdown

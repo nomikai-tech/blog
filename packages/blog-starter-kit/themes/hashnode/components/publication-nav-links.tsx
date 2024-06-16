@@ -5,9 +5,8 @@ import Link from 'next/link';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import * as DropdownPrimitive from '@radix-ui/react-dropdown-menu';
 import { twJoin } from 'tailwind-merge';
+import { useAppContext } from './contexts/appContext';
 import { ChevronDownV2SVG } from './icons/svgs';
-import { PublicationFragment } from '../generated/graphql';
-import { MAX_MAIN_NAV_LINKS } from '../utils/const';
 
 const PublicationNavLinksDropdown = dynamic(
   () => import('./publication-nav-links-dropdown'),
@@ -16,10 +15,15 @@ const PublicationNavLinksDropdown = dynamic(
   },
 );
 
+import { Publication } from '../generated/graphql';
+import { MAX_MAIN_NAV_LINKS } from '../utils/const';
+
 type Props = {
   currentActiveMenuItemId?: string | null;
   isHome?: boolean | null;
-} & Pick<NonNullable<PublicationFragment['preferences']>, 'enabledPages' | 'navbarItems'>;
+} & Pick<NonNullable<Publication['preferences']>, 'enabledPages' | 'navbarItems'> & {
+    navbarItems: Omit<Publication['preferences']['navbarItems'], 'series' | 'page'>;
+  };
 
 function PublicationNavLinks(props: Props) {
   const { currentActiveMenuItemId, isHome, enabledPages, navbarItems } = props;

@@ -1,6 +1,6 @@
 query Newsletter($host: String!, $slug: String!) {
   publication(host: $host) {
-    ...Publication
+    ...RequiredPublicationFields
     author {
       id
       followersCount

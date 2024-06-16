@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic';
 import { useState, useRef } from 'react';
 
-import { PublicationFragment } from '../generated/graphql';
+import { Preferences, Publication, PublicationNavbarItem, User } from '../generated/graphql';
 import { BarsSVG } from './icons/svgs';
 import CommonHeaderIconBtn from './common-header-icon-btn';
 
@@ -11,7 +11,13 @@ const PublicationSidebar = dynamic(() => import('./publication-sidebar'), {
 });
 
 interface Props {
-  publication: Pick<PublicationFragment, 'id' | 'title' | 'url' | 'isTeam' | 'favicon' | 'links' | 'about' | 'author' | 'preferences'>;
+  publication: Pick<Publication, 'id' | 'title' | 'url' | 'isTeam' | 'favicon' | 'links'> & {
+    author: Pick<User, 'id' | 'username' | 'name' | 'profilePicture'>;
+  } & {
+    preferences: Omit<Preferences, 'navbarItems'> & {
+      navbarItems: Array<Omit<PublicationNavbarItem, 'series'>>;
+    };
+  };
 }
 
 const LeftSidebarButton = (props: Props) => {

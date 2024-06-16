@@ -2,7 +2,7 @@ import { Waypoint } from 'react-waypoint';
 
 import Button from './hn-button';
 import { ChevronDownSVG } from './icons/svgs';
-import { PageInfo, PublicationFragment, PostThumbnailFragment } from '../generated/graphql';
+import { PageInfo, RequiredPublicationFieldsFragment, PostThumbnailFragment } from '../generated/graphql';
 import BlogPostPreview from './magazine-blog-post-preview';
 
 const PublicationPosts = (props: {
@@ -13,7 +13,7 @@ const PublicationPosts = (props: {
     }>;
     pageInfo: Pick<PageInfo, 'hasNextPage' | 'endCursor'>;
   };
-  publication: Pick<PublicationFragment, 'features'>;
+  publication: Pick<RequiredPublicationFieldsFragment, 'features'>;
   fetchMore: () => void;
   fetching: boolean;
   fetchedOnce: boolean;

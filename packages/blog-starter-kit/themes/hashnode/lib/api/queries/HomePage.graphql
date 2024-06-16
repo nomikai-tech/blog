@@ -1,6 +1,6 @@
 query HomePageInitial($host: String!) {
   publication(host: $host) {
-    ...Publication
+    ...RequiredPublicationFields
     about {
       markdown
       html
