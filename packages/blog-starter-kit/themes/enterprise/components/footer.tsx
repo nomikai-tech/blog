@@ -19,18 +19,18 @@ export const Footer = () => {
 					</Link>
 				</div>
 				<div className="flex w-full h-auto pb-6 flex-col md:flex-row gap-5 md:grid-cols-6 lg:grid-cols-5 items-center place-content-end">
-					<a href="/" className="text-sm md:pr-6 hover:text-turquoise md:border-r h-5">
+					<Link href="https://nomikai.com" className="text-sm md:pr-6 hover:text-turquoise md:border-r h-5">
 						Home
-					</a>
-					<a href="/pricing" className="text-sm md:pr-6 hover:text-turquoise md:border-r h-5">
+					</Link>
+					<Link href="https://nomikai.com/pricing" className="text-sm md:pr-6 hover:text-turquoise md:border-r h-5">
 						Pricing
-					</a>
-					<a href="/about" className="text-sm md:pr-6 hover:text-turquoise md:border-r h-5">
+					</Link>
+					<Link href="https://nomikai.com/about" className="text-sm md:pr-6 hover:text-turquoise md:border-r h-5">
 						About
-					</a>
-					<a href="/talk-to-us" className="text-sm md:pr-6 hover:text-turquoise h-5">
+					</Link>
+					<Link href="https://nomikai.com/talk-to-us" className="text-sm md:pr-6 hover:text-turquoise h-5">
 						Contact Us
-					</a>
+					</Link>
 					<div className="flex align-center">
 						<SocialLinks />
 					</div>
@@ -41,15 +41,15 @@ export const Footer = () => {
 					Copyright ©2024 Nomikai Corporation
 				</div>
 				<div className="flex w-full h-auto flex-col md:flex-row gap-5 md:grid-cols-6 lg:grid-cols-5 justify-center items-center items-end md:content-end md:align-end md:place-content-end md:justify-items-end">
-					<a href="/terms-of-use" className="text-xs md:pr-6 hover:text-turquoise md:border-r h-5">
+					<Link href="https://nomikai.com/terms-of-use" className="text-xs md:pr-6 hover:text-turquoise md:border-r h-5">
 						Terms of Use
-					</a>
-					<a href="/privacy-policy" className="text-xs md:pr-6 hover:text-turquoise md:border-r h-5">
+					</Link>
+					<Link href="https://nomikai.com/privacy-policy" className="text-xs md:pr-6 hover:text-turquoise md:border-r h-5">
 						Privacy Policy
-					</a>
-					<a href="/cookie-policy" className="text-xs hover:text-turquoise h-5">
+					</Link>
+					<Link href="https://nomikai.com/cookie-policy" className="text-xs hover:text-turquoise h-5">
 						Cookie Policy
-					</a>
+					</Link>	
 				</div>
 			</Container>
 		</footer>
