@@ -5,6 +5,11 @@ COPY . /app
 # Set the working directory
 WORKDIR /app
 
+ENV NEXT_PUBLIC_HASHNODE_GQL_ENDPOINT: https://gql.hashnode.com
+ENV NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST: nomikai.hashnode.dev
+ENV NEXT_PUBLIC_BASE_URL: /blog
+ENV NEXT_PUBLIC_MODE: production
+
 # Install pnpm
 RUN npm install -g pnpm
 
